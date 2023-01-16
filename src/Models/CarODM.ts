@@ -12,11 +12,10 @@ class CarRegisterODM {
 
   constructor() {
     this.schema = new Schema<ICar>({
-      id: { type: String, required: true },
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },
-      status: { type: Boolean, required: true },
+      status: { type: Boolean },
       buyValue: { type: Number, required: true },
       doorsQty: { type: Number, required: true },
       seatsQty: { type: Number, required: true },
@@ -26,6 +25,14 @@ class CarRegisterODM {
 
   public async create(car: ICar): Promise<ICar> {
     return this.model.create({ ...car });
+  }
+
+  public async find(): Promise<ICar[]> {
+    return this.model.find();
+  }
+
+  public async findById(id: string): Promise<ICar | null> {
+    return this.model.findOne({ id });
   }
 }
 
