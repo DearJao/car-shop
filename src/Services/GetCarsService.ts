@@ -13,6 +13,7 @@ class GetCarsService {
   public async getCars(): Promise<(Car | null)[]> {
     const findCarODM = new CarODM();
     const cars = await findCarODM.find();
+    console.log('1', cars);
     return cars.map((car) => (
       this.createRegisterDomain(car)
     ));
@@ -26,3 +27,5 @@ class GetCarsService {
 }
 
 export default GetCarsService;
+
+// 91481925578 and https://app.sli.do/event/1E3nDTpqY51JrQeLW48XrW

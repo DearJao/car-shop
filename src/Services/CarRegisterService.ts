@@ -18,6 +18,3 @@ class CarRegisterService {
 }
 
 export default CarRegisterService;
-
-// 97630609737 and https://app.sli.do/event/1E3nDTpqY51JrQeLW48XrW
-// [Car-Shop][Req 2][Sala 10] - Problemas com a tipagem e portas do container

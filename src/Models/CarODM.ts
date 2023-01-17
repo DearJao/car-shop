@@ -6,7 +6,7 @@ import {
 } from 'mongoose';
 import ICar from '../Interfaces/ICar';
 
-class CarRegisterODM {
+class CarODM {
   private schema: Schema;
   private model: Model<ICar>;
 
@@ -32,8 +32,8 @@ class CarRegisterODM {
   }
 
   public async findById(id: string): Promise<ICar | null> {
-    return this.model.findOne({ id });
+    return this.model.findOne({ _id: id }, { __v: 0 });
   }
 }
 
-export default CarRegisterODM;
+export default CarODM;
