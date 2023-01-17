@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { NextFunction, Request, Response } from 'express';
 import ICar from '../Interfaces/ICar';
 import CarService from '../Services/CarService';
@@ -63,34 +64,33 @@ class CarRegisterController {
     }
   }
 
-  // public async updateCarsById() {
-  //   const { id } = this.req.params;
+  public async updateCarsById() {
+    const { id } = this.req.params;
 
-  // const changes: ICar = {
-  //   id: this.req.body.id,
-  //   model: this.req.body.model,
-  //   year: this.req.body.year,
-  //   color: this.req.body.color,
-  //   status: this.req.body.status,
-  //   buyValue: this.req.body.buyValue,
-  //   doorsQty: this.req.body.doorsQty,
-  //   seatsQty: this.req.body.seatsQty,
-  // };
+    const changes: ICar = {
+      model: this.req.body.model,
+      year: this.req.body.year,
+      color: this.req.body.color,
+      status: this.req.body.status,
+      buyValue: this.req.body.buyValue,
+      doorsQty: this.req.body.doorsQty,
+      seatsQty: this.req.body.seatsQty,
+    };
 
-  //   if (id.length !== 24) {
-  //     return this.res.status(ErrorMap.INVALID_FORMAT).json({ message: 'Invalid mongo id' });
-  //   }
+    if (id.length !== 24) {
+      return this.res.status(ErrorMap.INVALID_FORMAT).json({ message: 'Invalid mongo id' });
+    }
 
-  //   try {
-  //     const car = await this.service.updateCarsById(id, changes);
-  //     if (!car) {
-  //       return this.res.status(ErrorMap.NOT_FOUND).json({ message: 'Car not found' });
-  //     }
-  //     return this.res.status(200).json(car);
-  //   } catch (error) {
-  //     this.next(error);
-  //   }
-  // }
+    try {
+      const car = await this.service.updateCarsById(id, changes);
+      if (!car) {
+        return this.res.status(ErrorMap.NOT_FOUND).json({ message: 'Car not found' });
+      }
+      return this.res.status(200).json(car);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 }
 
 export default CarRegisterController;

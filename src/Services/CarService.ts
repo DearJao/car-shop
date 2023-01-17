@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Car from '../Domains/Car';
 import ICar from '../Interfaces/ICar';
 import CarODM from '../Models/CarODM';
@@ -16,10 +17,9 @@ class CarService {
     return this.createRegisterDomain(newRegister);
   }
 
-  public async getCars() {
+  public async getCars(): Promise<(Car | null)[]> {
     const findCarODM = new CarODM();
     const cars = await findCarODM.find();
-    // console.log('1', cars);
     return cars.map((car) => (
       this.createRegisterDomain(car)
     ));
@@ -31,11 +31,17 @@ class CarService {
     return this.createRegisterDomain(result);
   }
 
-  // public async updateCarsById(id: string, changes: ICar) {
-  //   const updateCarODM = new CarODM();
-  //   const result = await updateCarODM.update(id, changes);
-  //   return this.createRegisterDomain(result);
-  // }
+  public async updateCarsById(id: string, changes: ICar): Promise<Car | null> {
+    const updateCarODM = new CarODM();
+
+    const findCar = await updateCarODM.findById(id);
+    if (!findCar) {
+      return null;
+    }
+
+    const result = await updateCarODM.update({ id, ...changes });
+    return this.createRegisterDomain(result);
+  }
 }
 
 export default CarService;

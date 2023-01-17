@@ -35,10 +35,10 @@ class CarODM {
     return this.model.findOne({ _id: id }, { __v: 0 });
   }
 
-  // public async update(id: string, changes: ICar): Promise<ICar | null> {
-  //   // this.model.findOne({ _id: id }, { __v: 0 });
-  //   return this.model.updateOne({ _id: id }, { ...changes });
-  // }
+  public async update(carInfo: ICar): Promise<ICar | null> {
+    await this.model.updateOne({ _id: carInfo.id }, { ...carInfo });
+    return carInfo;
+  }
 }
 
 export default CarODM;
