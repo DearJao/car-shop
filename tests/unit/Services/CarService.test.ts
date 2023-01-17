@@ -3,8 +3,7 @@ import { Model } from 'mongoose';
 import sinon from 'sinon';
 import Car from '../../../src/Domains/Car';
 import ICar from '../../../src/Interfaces/ICar';
-import CarRegisterService from '../../../src/Services/CarRegisterService';
-import GetCarsService from '../../../src/Services/GetCarsService';
+import CarService from '../../../src/Services/CarService';
 
 describe('test all functions of service layer', function () {
   it('verify if is possible create a new car register', async function () {
@@ -20,7 +19,7 @@ describe('test all functions of service layer', function () {
     const carOutput: Car = new Car({ ...carInput, id: '1' });
     sinon.stub(Model, 'create').resolves(carOutput);
 
-    const service = new CarRegisterService();
+    const service = new CarService();
     const result = await service.register(carInput);
 
     expect(result).to.be.deep.equal(carOutput);
@@ -51,7 +50,7 @@ describe('test all functions of service layer', function () {
     ];
     sinon.stub(Model, 'find').resolves(carInput);
 
-    const service = new GetCarsService();
+    const service = new CarService();
     const result = await service.getCars();
 
     expect(result).to.be.deep.equal(carInput);
@@ -70,8 +69,8 @@ describe('test all functions of service layer', function () {
     };
     sinon.stub(Model, 'findOne').resolves(carInput);
 
-    const service = new GetCarsService();
-    const result = await service.getCars();
+    const service = new CarService();
+    const result = await service.getCarsById('634852326b35b59438fbea2f');
 
     expect(result).to.be.deep.equal(carInput);
   });

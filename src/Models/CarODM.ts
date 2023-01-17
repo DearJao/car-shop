@@ -20,7 +20,7 @@ class CarODM {
       doorsQty: { type: Number, required: true },
       seatsQty: { type: Number, required: true },
     });
-    this.model = models.CarShop || model('CarShop', this.schema);
+    this.model = models.cars || model('cars', this.schema);
   }
 
   public async create(car: ICar): Promise<ICar> {
@@ -34,6 +34,11 @@ class CarODM {
   public async findById(id: string): Promise<ICar | null> {
     return this.model.findOne({ _id: id }, { __v: 0 });
   }
+
+  // public async update(id: string, changes: ICar): Promise<ICar | null> {
+  //   // this.model.findOne({ _id: id }, { __v: 0 });
+  //   return this.model.updateOne({ _id: id }, { ...changes });
+  // }
 }
 
 export default CarODM;
