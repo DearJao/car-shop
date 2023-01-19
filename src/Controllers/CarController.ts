@@ -4,7 +4,7 @@ import ICar from '../Interfaces/ICar';
 import CarService from '../Services/CarService';
 import ErrorMap from '../Utils/ErrorMap';
 
-class CarRegisterController {
+class CarController {
   private req: Request;
   private res: Response;
   private next: NextFunction;
@@ -93,4 +93,4 @@ class CarRegisterController {
   }
 }
 
-export default CarRegisterController;
+export default CarController;

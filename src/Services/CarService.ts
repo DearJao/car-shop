@@ -39,7 +39,7 @@ class CarService {
       return null;
     }
 
-    const result = await updateCarODM.update({ id, ...changes });
+    const result = await updateCarODM.update(id, changes);
     return this.createRegisterDomain(result);
   }
 }
