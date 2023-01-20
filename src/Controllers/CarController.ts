@@ -33,6 +33,7 @@ class CarController {
       const newRegister = await this.service.register(register);
       return this.res.status(201).json(newRegister);
     } catch (error) {
+      console.log(error);
       this.next(error);
     }
   }
