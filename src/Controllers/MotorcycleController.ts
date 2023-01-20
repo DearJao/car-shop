@@ -2,7 +2,7 @@
 import { NextFunction, Request, Response } from 'express';
 import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcycleService from '../Services/MotorcycleService';
-// import ErrorMap from '../Utils/ErrorMap';
+import ErrorMap from '../Utils/ErrorMap';
 
 class MotorcycleController {
   private req: Request;
@@ -19,7 +19,6 @@ class MotorcycleController {
 
   public async create() {
     const register: IMotorcycle = {
-      // id: this.req.body.id,
       model: this.req.body.model,
       year: this.req.body.year,
       color: this.req.body.color,
@@ -32,6 +31,33 @@ class MotorcycleController {
     try {
       const newRegister = await this.service.register(register);
       return this.res.status(201).json(newRegister);
+    } catch (error) {
+      this.next(error);
+    }
+  }
+
+  public async getMotorcycles() {
+    try {
+      const result = await this.service.getMotorcycle();
+      return this.res.status(200).json(result);
+    } catch (error) {
+      return this.next(error);
+    }
+  }
+
+  public async getMotorcycleById() {
+    const { id } = this.req.params;
+
+    if (id.length !== 24) {
+      return this.res.status(ErrorMap.INVALID_FORMAT).json({ message: 'Invalid mongo id' });
+    }
+
+    try {
+      const motorcycle = await this.service.getMotorcycleById(id);
+      if (!motorcycle) {
+        return this.res.status(ErrorMap.NOT_FOUND).json({ message: 'Motorcycle not found' });
+      }
+      return this.res.status(200).json(motorcycle);
     } catch (error) {
       this.next(error);
     }
