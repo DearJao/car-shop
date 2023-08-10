@@ -12,7 +12,7 @@
 
 <h2><strong>Estrutura:</strong></h2>
         .</br>
-        ├── 🔸 src/</br>
+       ├── 🔸 src/</br>
         │   ├──🔸 Controllers/</br>
         │   ├── 🔸 Domains/</br>
         │   ├── 🔸 Interfaces/</br>
@@ -21,11 +21,11 @@
         │   ├── 🔸 Routes/</br>
         │   ├── 🔸 Services/</br>
         │   └── ...</br>
-        ├── 🔸 tests/</br>
+       ├── 🔸 tests/</br>
         │   ├── 🔸 unit/</br>
-        |   │      ├── 🔸 Services/</br>
-        |   │      ├── ...</br>
-        |   └── ... </br>
+         |   │      ├── 🔸 Services/</br>
+         |   │      ├── ...</br>
+         |   └── ... </br>
         └── ...</br>
 
 <h2><strong>Para rodar o projeto siga as intruções:</strong></h2>
