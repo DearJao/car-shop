@@ -1,4 +1,4 @@
-<h1><strong>Bem vindo/a ao meu projeto Car Shop!!<strong></h1>
+<h1><strong>Bem vindo/a ao meu projeto Car Shop!!</strong>></h1>
 
 <h2><strong>Sobre o projeto:</strong></h2>
   Projeto estruturado pensando em uma aplicação de vendas focada em carros e um espaço para motocicletas, nele você pode ver uma lista detalhada sobre os carros e suas informações como preço, cor, modelo e quantidade de assentos. No caso das motos você pode consultar os modelos disponíveis, preço, cilindrada e ano. Também é possivel cadastrar e apagar veiculos do banco de dados, e atualizar qualquer informação, tudo isso passando por casos de testes para não corromper o banco de dados.
@@ -35,20 +35,25 @@
       </br>
         git clone git@github.com:DearJao/Prova-tecnica-BHUT.git
         </br>
+        </br>
       - Em seguida você precisa entrar na pasta do projeto, através do seu gerenciador de arquivos ou no terminal com o comando:
       </br>
         cd Prova-tecnica-BHUT/back-end/
+        </br>
         </br>
       - Para o projeto funcionar você precisa ter a biblioteca .NODE.JS instalada em sua maquina. Caso não tenha neste link: https://nodejs.org/en/download você tera
       acesso ao dowload oficial da biblioteca e as intruções para configurar.
       </br>
 (obs* o projeto foi contruido na versão 18.12.1, outras versões podem ocasionar erros inesperados)
 </br>
-      - Primeiramente docker-compose up -d
+</br>
+      - Primeiramente use o comando docker-compose up -d
+      </br>
       </br>
       - Após esses passos, no terminal digite o seguinte comando: npm i ou npm install
       </br>
-      (na segunda opçaõ tera de escolher de que forma quer instalar os pacotes do projeto)
+      (na segunda opção tera de escolher de que forma quer instalar os pacotes do projeto)
+      </br>
       </br>
       - Para subir o projeto completo use o comando <strong>npm run compose:up</strong> ou <strong>npm run compose: up:dev</strong>
       </br>
