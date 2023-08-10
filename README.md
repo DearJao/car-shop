@@ -27,8 +27,6 @@
         |   │      ├── ...</br>
         |   └── ... </br>
         └── ...</br>
-.Legenda:</br>
-      🔸 Diretorios</br>
 
 <h2><strong>Para rodar o projeto siga as intruções:</strong></h2>
       - Dê um git clone no seu trminal de sua maquina um pasta vazia para instalar o projeto desta maneira:
