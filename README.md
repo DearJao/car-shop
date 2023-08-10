@@ -31,12 +31,10 @@
 <h2><strong>Para rodar o projeto siga as intruções:</strong></h2>
       - Dê um git clone no seu trminal de sua maquina um pasta vazia para instalar o projeto desta maneira:
       </br>
-        git clone git@github.com:DearJao/Prova-tecnica-BHUT.git
+        git clone git@github.com:DearJao/car-shop.git
         </br>
         </br>
-      - Em seguida você precisa entrar na pasta do projeto, através do seu gerenciador de arquivos ou no terminal com o comando:
-      </br>
-        cd Prova-tecnica-BHUT/back-end/
+      - Em seguida você precisa entrar na pasta do projeto, através do seu gerenciador de arquivos ou no terminal.
         </br>
         </br>
       - Para o projeto funcionar você precisa ter a biblioteca .NODE.JS instalada em sua maquina. Caso não tenha neste link: https://nodejs.org/en/download você tera
