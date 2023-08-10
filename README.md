@@ -1,16 +1,17 @@
-<h1><strong>Bem vindo/a ao meu projeto Car Shop!!</strong>></h1>
+<h1><strong>Bem vindo/a ao meu projeto Car Shop!!</strong></h1>
 
-<h2><strong>Sobre o projeto:</strong></h2>
+<h2><summary><strong>Sobre o projeto:</strong></summary></h2>
   Projeto estruturado pensando em uma aplicação de vendas focada em carros e um espaço para motocicletas, nele você pode ver uma lista detalhada sobre os carros e suas informações como preço, cor, modelo e quantidade de assentos. No caso das motos você pode consultar os modelos disponíveis, preço, cilindrada e ano. Também é possivel cadastrar e apagar veiculos do banco de dados, e atualizar qualquer informação, tudo isso passando por casos de testes para não corromper o banco de dados.
 
-<h2><strong>Construção e Features/Tecnologias:</strong></h2                                                                    
+<h2><summary><strong>Construção e Features/Tecnologias:</strong></summary></h2>
       A construção foi feita através do <strong>Docker</strong> para que ele possa ser usado em qualquer maquina, contruido em um banco de dados  não relacional feito
       com <strong>MongoDB</strong> e <strong>Mongoose</strong>, rotas com feitas com <strong>express</strong> para facilitar a manipulação e entendimento de 
       código, foi escrito inteiramente com <strong>TypeScript</strong> para se ter mais segurança no código e facilitar a leitura do código, manutenção e 
       escalabilidade da aplicação, todas as rotas efunções passaram por testes utilizando <strong>chai e sinon</strong> para fazer facilitar leitura e para fazer mock
       em teste confirmando resultado concretos.
 
-<h2><strong>Estrutura:</strong></h2>
+<h2><summary><strong>Estrutura:</strong></summary></h2>
+<details>
         .</br>
        ├── 🔸 src/</br>
         │   ├──🔸 Controllers/</br>
@@ -27,8 +28,9 @@
          |   │      ├── ...</br>
          |   └── ... </br>
         └── ...</br>
+</details>
 
-<h2><strong>Para rodar o projeto siga as intruções:</strong></h2>
+<h2><summary><strong>Para rodar o projeto siga as intruções:</strong></summary></h2>
       - Dê um git clone no seu trminal de sua maquina um pasta vazia para instalar o projeto desta maneira:
       </br>
         git clone git@github.com:DearJao/car-shop.git
@@ -56,6 +58,6 @@
       (você precisa ter o docker instalado na sua maquina)
       </br>
 
-<h2><strong>Através desse link você pode testar o banco de dados com o Swagger:</strong></h2>
+<h2><summary><strong>Através desse link você pode testar o banco de dados com o Swagger:</summary></strong></h2>
   </br>
       - (em construção)
