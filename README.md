@@ -54,11 +54,12 @@
       (na segunda opção tera de escolher de que forma quer instalar os pacotes do projeto)
       </br>
       </br>
-      - Para subir o projeto completo use o comando <strong>npm run compose:up</strong> ou <strong>npm run compose: up:dev</strong>
+      - Para subir o projeto completo use o comando <strong>docker exec -it car_shop bash</strong> e em seguida <strong>npm run dev</strong>
       </br>
       (você precisa ter o docker instalado na sua maquina)
       </br>
 
-<h2><summary><strong>Através desse link você pode testar o banco de dados com o Swagger:</summary></strong></h2>
-  </br>
-      - (em construção)
+<h2><summary>Swagger</summary></h2>
+</br>
+- Após subir o projeto, no seu navegador acesse a rota <strong>ttp://localhost:3001/api-docs/</strong> você testar o banco de dados com o Swagger.
+
