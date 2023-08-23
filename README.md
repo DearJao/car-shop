@@ -61,5 +61,5 @@
 
 <h2><summary>Swagger</summary></h2>
 </br>
-- Após subir o projeto, no seu navegador acesse a rota <strong>ttp://localhost:3001/api-docs/</strong> você testar o banco de dados com o Swagger.
+- Após subir o projeto, no seu navegador acesse a rota <strong>http://localhost:3001/api-docs/</strong> você testar o banco de dados com o Swagger.
 
