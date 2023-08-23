@@ -1,0 +1,382 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API de manipulação de carros",
+    "description": "banco de dados para teste de api criada no projeto carshop, aqui você pode testar todas as rotas e queries da aplicação",
+    "contact": {
+      "email": "jvvr2013@gmail.com"
+    },
+    "version": "1.8.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:3000/v1",
+      "descripition": "API de test"
+    }
+  ],
+  "paths": {
+    "/cars": {
+      "post": {
+        "summary": "Cadastro de novos carros",
+        "descripition": "Essa rota sera responsavel por criar novos carros com suas espesificações",
+        "tags": [
+          "Cars"
+        ],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cars"
+              },
+              "examples": {
+                "car": {
+                  "value": {
+                    "model": "Aston Martin - DB5",
+                    "year": 1967,
+                    "color": "silver",
+                    "status": "true",
+                    "buyValue": 6.40010010,
+                    "doorsQty": 2,
+                    "seatsQty": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Carro criado com sucesso"
+          }
+        }
+      }
+    },
+    "/cars/": {
+      "get": {
+        "description": "Busca de todos os carros",
+        "summary": "Retorna todos os carros disponivies no banco de dados",
+        "tags": [
+          "Cars"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Cars"
+                },
+                "examples": {
+                  "car": {
+                    "value": [
+                      {
+                        "model": "Ferrari - F40",
+                        "year": 1987,
+                        "color": "red",
+                        "status": "true",
+                        "buyValue": 999999999,
+                        "doorsQty": 2,
+                        "seatsQty": 2
+                      },
+                      {
+                        "model": "Aston Martin - DB5",
+                        "year": 1967,
+                        "color": "silver",
+                        "status": "true",
+                        "buyValue": 6.40010010,
+                        "doorsQty": 2,
+                        "seatsQty": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cars/{id}": {
+      "get": {
+        "description": "Busca de um produto pelo ID",
+        "summary": "Busca de um produto pelo ID",
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do produto para busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Cars"
+                },
+                "examples": {
+                  "car": {
+                    "value": {
+                      "model": "Ferrari - F40",
+                      "year": 1987,
+                      "color": "red",
+                      "status": "true",
+                      "buyValue": 999999999,
+                      "doorsQty": 2,
+                      "seatsQty": 2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Altera um produto pelo ID",
+        "summary": "Altera um produto pelo ID",
+        "tags": [
+          "Cars"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do produto para alteração",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Cars"
+              },
+              "examples": {
+                "car": {
+                  "value": {
+                    "model": "Ferrari - F40",
+                    "year": 1987,
+                    "color": "red",
+                    "status": "true",
+                    "buyValue": 999999999,
+                    "doorsQty": 2,
+                    "seatsQty": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Cars"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/motorcycles": {
+      "post": {
+        "summary": "Cadastro de novas motos",
+        "descripition": "Essa rota sera responsavel por criar novas motos com suas espesificações",
+        "tags": [
+          "Motorcycles"
+        ],
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Motorcycles"
+              },
+              "examples": {
+                "car": {
+                  "value": {
+                    "model": "Yamaha - R1",
+                    "year": 2006,
+                    "color": "Yellow",
+                    "status": "true",
+                    "buyValue": 125.000,
+                    "category": "Street",
+                    "engineCapacity": 1000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Moto criada com sucesso"
+          }
+        }
+      }
+    },
+    "/motorcycles/": {
+      "get": {
+        "description": "Busca de todas as motos",
+        "summary": "Retorna todos as motos disponivies no banco de dados",
+        "tags": [
+          "Motorcycles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Motorcycles"
+                },
+                "examples": {
+                  "car": {
+                    "value": [
+                      {
+                        "model": "Yamaha - R1",
+                        "year": 2006,
+                        "color": "Yellow",
+                        "status": "true",
+                        "buyValue": 125.000,
+                        "category": "Street",
+                        "engineCapacity": 1000
+                      },
+                      {
+                        "model": "Ducati - Panigale V4 R",
+                        "year": 2023,
+                        "color": "Red",
+                        "status": "true",
+                        "buyValue": 200.000,
+                        "category": "Street",
+                        "engineCapacity": 1000
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "motorcycles/{id}": {
+      "get": {
+        "description": "Busca de uma moto pelo ID",
+        "summary": "Busca de uma moto pelo ID",
+        "tags": [
+          "Motorcycles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da moto para alteração",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Motorcycles"
+                },
+                "examples": {
+                  "car": {
+                    "value": {
+                      "model": "Yamaha - R1",
+                      "year": 2006,
+                      "color": "Yellow",
+                      "status": "true",
+                      "buyValue": 125.000,
+                      "category": "Street",
+                      "engineCapacity": 1000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cars": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "year": {
+            "type": "number"
+          },
+          "color": {
+            "type": "string"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "buyValue": {
+            "type": "number"
+          },
+          "doorsQty": {
+            "type": "number"
+          },
+          "seatsQty": {
+            "type": "number"
+          }
+        }
+      },
+      "Motorcycles": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "year": {
+            "type": "number"
+          },
+          "color": {
+            "type": "string"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "buyValue": {
+            "type": "number"
+          },
+          "category": {
+            "type": "string"
+          },
+          "engineCapacity": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
