@@ -61,5 +61,9 @@
 
 <h2><summary>Swagger</summary></h2>
 </br>
-- Após subir o projeto, no seu navegador acesse a rota <strong>http://localhost:3001/api-docs/</strong> você testar o banco de dados com o Swagger.
+- Primeiramente dentro da apsta do projeto use os comandos:</br>
+. npm install swagger-ui-express</br>
+. npm add @types/swagger-ui-express -D</br>
+</br>
+- Após testar o projeto, no seu navegador acesse a rota <strong>http://localhost:3001/api-docs/</strong> você testar o banco de dados com o Swagger.
 
